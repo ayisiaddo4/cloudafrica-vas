@@ -8,6 +8,9 @@ var config = require('../config'),
   db = require('../models/database'),
   logger = require("./logger"),
   utils = require("../utils/utils"),
+  locallydb = require('locallydb'),
+  db = new locallydb('../models'),
+  collection = db.collection('monsters'),
   MCUssd = {};
 
 MCUssd.acCheck = function (req, res) {
@@ -44,8 +47,10 @@ MCUssd.registerEndpoint = function (req, res) {
     endpoint = body.endpoint,
     url = config.mc.baseUrl + config.mc.registerEndpoint + "service_token" + "=" + service_token + "&" + "ussd_code" + "=" + ussd_code + "&" + "endpoint" + "=" + endpoint;
 
-  console.log('endpoint request body' + body);
-
+  console.log('register endpont request body' + JSON.stringify(body));
+  collection.insert({ussd_code: ussd_code, service_token: service_token, endpoint: endpoint});
+  var newendpoint = JSON.stringify(collection.get(0));
+  console.log('get collection' +newendpoint);
   var options = {
     url: url,
     json: true,
@@ -78,6 +83,7 @@ MCUssd.ussdCallBack = function (req, res) {
     responseUrl = config.mc.clientResponseUrl,
     ussdcode = config.mc.ussd_code,
     message = config.mc.message,
+    clientendpoint,
     url =baseUrl +responseUrl +"ussd_code" +"="+ussdcode+ "&"+"response_message"+"=" +message + "&" +"phone_number"+"="+phone_number;
 
   console.log("==================================");
@@ -88,6 +94,8 @@ MCUssd.ussdCallBack = function (req, res) {
   console.log("Session Id >>>", session_id);
   console.log("mcUrl >>>" + url);
   console.log("==================================");
+  clientendpoint = collection.where({endpoint: endpoint});
+  console.log('collection retrieve endpoint', clientendpoint);
 
   var options = {
     url: url,

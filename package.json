@@ -16,6 +16,7 @@
     "express": "^4.15.2",
     "jsonwebtoken": "^7.3.0",
     "local-reverse-geocoder": "^0.4.1",
+    "locallydb": "0.0.9",
     "lodash": "^4.17.4",
     "morgan": "^1.8.1",
     "mysql": "^2.13.0",
