@@ -75,6 +75,7 @@ MCUssd.registerEndpoint = function (req, res) {
 MCUssd.ussdCallBack = function (req, res) {
   var reqBody = req.body;
     console.log('incoming request body << >>>', reqBody);
+    
   var session_id = reqBody.session_id,
     type = reqBody.type,
     user_request = reqBody.user_request,

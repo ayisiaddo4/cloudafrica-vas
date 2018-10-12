@@ -21,6 +21,7 @@ var APIRoutes = function(passport) {
     router.post('/authenticate', AuthController.authenticateUser);
 
     router.post('/mail', NodeMailController.doPost);
+    router.post('/mandmail', NodeMailController.sendMandrillMail);
     router.post('/group', GroupServiceController.createGroup);
     router.post('/post', PostServiceController.postContent);
 
