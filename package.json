@@ -15,6 +15,7 @@
     "cors": "^2.8.3",
     "express": "^4.15.2",
     "jsonwebtoken": "^7.3.0",
+    "larvitsmpp": "^0.4.0",
     "local-reverse-geocoder": "^0.4.1",
     "locallydb": "0.0.9",
     "lodash": "^4.17.4",
@@ -35,6 +36,7 @@
     "reverse-geocoding": "^2.0.0",
     "sendmail": "^1.4.1",
     "sequelize": "^3.30.2",
+    "smpp": "^0.3.1",
     "winston": "^2.4.0",
     "winston-daily-rotate-file": "^1.7.2"
   },

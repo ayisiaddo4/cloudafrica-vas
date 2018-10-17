@@ -12,6 +12,9 @@ var config = require('../config'),
     NodeMailController = require('../controllers/nodeMailer'),
     HubtelServiceController = require('../controllers/hubtelServiceController'),
     SmsRestService = require('../controllers/smsRestService'),
+    McSmppServerController = require('../controllers/mcsmpp.server.controller'),
+    McSmppServerController = require('../controllers/mcsmpp.server.controller'),
+    LarvitSmppServerController = require('../controllers/nodesmpp.server.controller'),
     McUSSDSeviceController = require('../controllers/mcussd.service.controller');
 
 
@@ -59,6 +62,8 @@ var APIRoutes = function(passport) {
     router.get('/ussdcallback', McUSSDSeviceController.ussdCallBack);
     router.get('/ussdclientresponse', McUSSDSeviceController.ussdCallBack);
 
+    // router.get('/smpp', McSmppServerController.doSmpp);
+    router.get('/larvitsmpp', LarvitSmppServerController.doLarvitSmpp);
   return router;
 };
 
