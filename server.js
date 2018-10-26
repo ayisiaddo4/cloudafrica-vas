@@ -35,11 +35,11 @@ app.use('/api', require('./server/routes/api')(passport));// Bundle API routes.
 // Return other routes to Angular index file..
 app.get('*', (req, res) => {
   // res.sendFile(path.join(__dirname, ''));
-  var msg = "<em>Welcome .... Cloud Africa VAS :)</em>";
+  var msg = "<em>Welcome, .... Cloud Africa Value Added Service :)</em>";
   res.send(msg);
 });
 
 // Start the server.
-app.listen('3000', function () {
-console.log(`Magic happens at http://localhost:3000`);
+app.listen('8080', function () {
+console.log(`Magic happens at http://localhost:8080`);
 });

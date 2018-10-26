@@ -115,5 +115,9 @@ config.mc = {
   message: `Welcome to Cloud Africa
   1) Services 
   0) Help
-  `
+  `,
+  SmsUrl: "http://54.163.215.114:1817/Receiver?",
+  SmsUsername: "CldAfr1",
+  SmsPassword: "C1D2A3f4",
+  shortCode: "1400"
 }
