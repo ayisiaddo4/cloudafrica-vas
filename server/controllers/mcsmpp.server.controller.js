@@ -14,7 +14,7 @@ MCHTTPSMS.sendSMS = function (req, res) {
     var body = req.body,
         to = body.receiver,
         message = body.message,
-        url = config.mc.SmsUrl + "User" + "=" + config.mc.SmsUsername + "&" + "Pass" + "=" + config.mc.SmsPassword + "&" + "From" + "=" + config.mc.shortCode + "&" + "To" + "=" + to + "&" + "Text" + "=" + message;
+        url = config.mc.SmsUrl+ "User"+"="+config.mc.SmsUsername + "&"+ "Pass"+"="+config.mc.SmsPassword+ "&"+ "From"+"="+config.mc.shortCode+ "&"+ "To"+"="+to + "&"+ "Text"+"="+message;
 
     var options = {
         url: url,
